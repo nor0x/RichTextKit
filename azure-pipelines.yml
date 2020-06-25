@@ -11,5 +11,5 @@ steps:
 - pwsh: node build.js
 - task: PublishBuildArtifacts@1
   inputs:
-    pathToPublish: 'Build\Release\Topten.RichTextKit'
+    pathToPublish: 'Build'
     artifactName: 'BuildOutput'
