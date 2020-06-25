@@ -12,8 +12,9 @@ steps:
 - task: NuGetCommand@2
   inputs:
     command: 'pack'
-    packagesToPack: 'Topten.RichTextKit/Topten.RichTextKit.csproj'
-    versioningScheme: 'off'
+    packagesToPack: '**/Topten.RichTextKit.csproj'
+    versioningScheme: 'off''
+    
 - task: PublishBuildArtifacts@1
   inputs:
     pathToPublish: 'Build\Release\Topten.RichTextKit'
