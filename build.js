@@ -8,7 +8,7 @@ if (bt.options.official) {
   bt.clock_version();
 
   // Clean build directory
-  bt.run("rm -rf ./Build");
+  //bt.run("rm -rf ./Build");
 }
 
 // Build
