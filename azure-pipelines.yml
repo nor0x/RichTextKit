@@ -13,8 +13,7 @@ steps:
   inputs:
     command: 'pack'
     packagesToPack: '**/Topten.RichTextKit.csproj'
-    versioningScheme: 'off''
-    
+    versioningScheme: 'off'
 - task: PublishBuildArtifacts@1
   inputs:
     pathToPublish: 'Build\Release\Topten.RichTextKit'
