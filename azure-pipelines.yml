@@ -1,4 +1,5 @@
 trigger:
+
 - master
 
 pool:
@@ -8,6 +9,11 @@ steps:
 - checkout: self
   submodules: true
 - pwsh: node build.js
+- task: NuGetCommand@2
+  inputs:
+    command: 'pack'
+    packagesToPack: 'Topten.RichTextKit/Topten.RichTextKit.csproj'
+    versioningScheme: 'off'
 - task: PublishBuildArtifacts@1
   inputs:
     pathToPublish: 'Build\Release\Topten.RichTextKit'
