@@ -16,6 +16,6 @@ steps:
 - task: NuGetCommand@2
   inputs:
     command: 'push'
-    packagesToPush: 'packagesToPush: 'Build\Release\*.nupkg'
+    packagesToPush: 'Build\Release\*.nupkg'
     nuGetFeedType: 'internal'
     publishVstsFeed: '067cb05e-eacb-4414-818f-32da6335867a'
