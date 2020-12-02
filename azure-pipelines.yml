@@ -10,8 +10,16 @@ steps:
 - pwsh: node build.js
 - task: PublishBuildArtifacts@1
   inputs:
-    pathToPublish: 'Build\Release\Topten.RichTextKit'
+    pathToPublish: 'Build\Release'
     artifactName: 'BuildOutput'
+
+
+- task: NuGetCommand@2
+  inputs:
+    command: 'push'
+    packagesToPush: 'Build\Release\*.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: '009da52b-8101-4621-b2c5-70aea38754aa'
 - task: NuGetCommand@2
   inputs:
     command: 'push'
