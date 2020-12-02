@@ -807,6 +807,7 @@ public IReadOnlyList<StyleRun> StyleRuns
             // Setup caret coordinates
             ci.CaretXCoord = ci.CodePointIndex < 0 ? 0 : fr.GetXCoordOfCodePointIndex(ci.CodePointIndex);
             ci.CaretRectangle = CalculateCaretRectangle(ci, fr);
+            ci.LineIndex = _lines.IndexOf(fr.Line);
 
             return ci;
         }

@@ -35,6 +35,11 @@ namespace Topten.RichTextKit
         /// The X-coordinate where the caret should be displayed for this code point.
         /// </summary>
         public float CaretXCoord;
+        
+        /// <summary>
+        /// Returns the line number that contains the caret
+        /// </summary>
+        public int LineIndex;
 
         /// <summary>
         /// A rectangle describing where the caret should be drawn, relative to the top-left
