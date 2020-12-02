@@ -1,29 +1,29 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <Import Project="../buildtools/Topten.props" />
-
-  <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netcoreapp2.0;net462</TargetFrameworks>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)'=='Release'">
-    <TtsCodeSign>True</TtsCodeSign>
-    <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/toptensoftware/richtextkit</PackageProjectUrl>
-    <PackageIcon>nuget-icon.png</PackageIcon>
-    <PackageTags>rich text, rich, text, Skia, SkiaSharp, Font</PackageTags>
-    <Description>Easy to use rich text rendering for SkiaSharp, including font-fallback, bi-directional text support and more...</Description>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="SkiaSharp" Version="2.80.1" />
-    <PackageReference Include="SkiaSharp.HarfBuzz" Version="2.80.1" />
-  </ItemGroup>
-
+    <Import Project="../buildtools/Topten.props" />
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0;</TargetFrameworks>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)'=='Release'">
+        <TtsCodeSign>True</TtsCodeSign>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/toptensoftware/richtextkit</PackageProjectUrl>
+        <PackageIcon>nuget-icon.png</PackageIcon>
+        <PackageTags>rich text, rich, text, Skia, SkiaSharp, Font</PackageTags>
+        <Description>Easy to use rich text rendering for SkiaSharp, including font-fallback, bi-directional text support and more...</Description>
+    </PropertyGroup>
+    <ItemGroup>
+        <!--
+        <PackageReference Include="SkiaSharp" Version="1.68.0" /><PackageReference Include="HarfBuzzSharp" Version="2.6.1" />
+        -->
+        <PackageReference Include="SkiaSharp" Version="2.80.0-preview.14" />
+        <PackageReference Include="HarfBuzzSharp" Version="2.6.1.5-preview.14" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Remove="Resources\BidiData.trie" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Resources\" />
+    </ItemGroup>
 </Project>
