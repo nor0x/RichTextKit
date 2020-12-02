@@ -896,7 +896,7 @@ public IReadOnlyList<StyleRun> StyleRuns
         /// <summary>
         /// Invalidate the layout
         /// </summary>
-        void InvalidateLayout()
+        public void InvalidateLayout()
         {
             _needsLayout = true;
         }
