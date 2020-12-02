@@ -562,6 +562,15 @@ public IReadOnlyList<StyleRun> StyleRuns
                 return _truncated;
             }
         }
+        
+        /// <summary>
+        /// Calculated word boundary caret indicies
+        /// </summary>
+        List<int> _wordBoundaryIndicies;
+        /// <summary>
+        /// Retrieves a list of all valid caret positions
+        /// </summary>
+        public IReadOnlyList<int> WordBoundaryIndicies => WordBoundaryAlgorithm.FindWordBoundaries(_codePoints.AsSlice()).ToList();
 
 
         /// <summary>
