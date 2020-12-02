@@ -1,6 +1,5 @@
 trigger:
-
-- master
+- pipeline-build
 
 pool:
   name: Hosted Windows 2019 with VS2019
@@ -9,7 +8,10 @@ steps:
 - checkout: self
   submodules: true
 - pwsh: node build.js
-- task: PublishBuildArtifacts@1
+
+- task: NuGetCommand@2
   inputs:
-    pathToPublish: 'Build'
-    artifactName: 'BuildOutput'
+    command: 'push'
+    pathToPublish: 'Build\Release\Topten.RichTextKit'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: 'eb54cffe-f9d3-4c8e-a086-9837e8131e6d/97becbd8-003d-44ac-975d-09ee5da34342'
