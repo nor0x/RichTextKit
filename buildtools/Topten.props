@@ -22,10 +22,11 @@
     <Compile Include="../version.cs" Link="version.cs" />
   </ItemGroup>
 
+  <!--
   <Target Name="Code Sign" AfterTargets="Build" Condition="$(TtsCodeSign) And '$(TargetFileName)'!=''">
     <Exec Command="ttssign $(TargetDir)$(TargetFileName)" />
   </Target>
-
+  -->
   <!--
     no docs for now
     <Target Name="InheritDoc" AfterTargets="PostBuildEvent" Condition="$(GenerateDocumentationFile) And $(TtsInheritDoc)">
