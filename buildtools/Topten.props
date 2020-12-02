@@ -26,10 +26,12 @@
     <Exec Command="ttssign $(TargetDir)$(TargetFileName)" />
   </Target>
 
-  <Target Name="InheritDoc" AfterTargets="PostBuildEvent" Condition="$(GenerateDocumentationFile) And $(TtsInheritDoc)">
-    <Exec Command="inheritdoc -b $(OutputPath) -f $(AssemblyName).xml --overwrite" />
-  </Target>
-
+  <!--
+    no docs for now
+    <Target Name="InheritDoc" AfterTargets="PostBuildEvent" Condition="$(GenerateDocumentationFile) And $(TtsInheritDoc)">
+      <Exec Command="inheritdoc -b $(OutputPath) -f $(AssemblyName).xml - -overwrite" />
+    </Target>
+  -->
   <ItemGroup>
       <None Include="../buildtools/nuget-icon.png" Pack="true" PackagePath=""/>
   </ItemGroup>
