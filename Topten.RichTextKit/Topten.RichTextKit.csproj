@@ -5,6 +5,7 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)'=='Release'">
         <TtsCodeSign>True</TtsCodeSign>
+        <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
