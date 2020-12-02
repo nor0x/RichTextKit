@@ -148,6 +148,8 @@ namespace Topten.RichTextKit
                 }
             }
         }
+        
+        public bool UseEllipsisAdorning { get; set; }
 
         /// <summary>
         /// Clear the content of this text block
@@ -2002,7 +2004,7 @@ public IReadOnlyList<StyleRun> StyleRuns
                     _measuredHeight -= _lines[_lines.Count - 1].Height;
                     _lines.RemoveAt(_lines.Count - 1);
                 }
-                if (_lines.Count > 0)
+                if (_lines.Count > 0 && UseEllipsisAdorning)
                 {
                     AdornLineWithEllipsis(_lines[_lines.Count - 1]);
                 }
@@ -2013,7 +2015,7 @@ public IReadOnlyList<StyleRun> StyleRuns
             // Have we hit the line count limit?
             if (_lines.Count >= _maxLinesResolved)
             {
-                if (_lines.Count > 0)
+                if (_lines.Count > 0 && UseEllipsisAdorning)
                 {
                     AdornLineWithEllipsis(_lines[_lines.Count - 1]);
                 }
