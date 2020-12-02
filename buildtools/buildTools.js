@@ -14,9 +14,14 @@ var options =
 function clock_version()
 {
 	var verInfo = options.version;
+	/*
 	var newBuild = prompt(`Enter new build number, 'n' to keep current (${verInfo.build}), or enter to bump to ${verInfo.build+1}:`);
+	newBuild = "bump";
 	if (newBuild != "n")
 		verInfo.build = newBuild ? parseInt(newBuild) : verInfo.build + 1;
+	*/
+	verInfo.build = verInfo.build + 1;
+
 	fs.writeFileSync("version.json", JSON.stringify(verInfo, null, 4), 'UTF8');
 
 	// Work out copyright year range

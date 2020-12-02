@@ -11,6 +11,10 @@ if (bt.options.official) {
   //bt.run("rm -rf ./Build");
 }
 
+
+  // Clock version
+  bt.clock_version();
+
 // Build
 bt.run("dotnet build Topten.RichTextKit -c Release");
 
