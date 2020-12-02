@@ -1,5 +1,0 @@
-[submodule "buildtools"]
-	path = buildtools
-	url = https://github.com/nor0x/buildtools.git
-	branch = master
-	
