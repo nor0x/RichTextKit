@@ -207,7 +207,7 @@ namespace Topten.RichTextKit
         /// </summary>
         /// <param name="x">The xcoord relative to the text block</param>
         /// <param name="htr">HitTestResult to be filled out</param>
-        internal void HitTest(float x, ref HitTestResult htr)
+        public void HitTest(float x, ref HitTestResult htr)
         {
             // Working variables
             float closestXPosition = 0;
