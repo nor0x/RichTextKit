@@ -30,6 +30,18 @@ namespace Topten.RichTextKit.Utils
             System.Diagnostics.Debug.Assert( hi - low >= 0, "Length overflow!");
             return low + ((hi - low) >> 1);
         }
+        
+        /// <summary>
+        /// Performs a binary search on the entire contents of an IReadOnlyList
+        /// </summary>
+        /// <typeparam name="T">The list element type</typeparam>
+        /// <param name="list">The list to be searched</param>
+        /// <param name="value">The value to search for</param>
+        /// <returns>The index of the found item; otherwise the bitwise complement of the index of the next larger item</returns>
+        public static int BinarySearch<T>(this IReadOnlyList<T> list, T value) where T : IComparable
+        {
+            return list.BinarySearch(value, (a, b) => a.CompareTo(b));
+        }
 
         /// <summary>
         /// Performs a binary search on the entire contents of an IReadOnlyList
